@@ -1,53 +1,33 @@
 function Blog() {
   const blogPosts = [
     {
-      image: '/assets/images/blog-1.jpg',
-      category: 'Design',
-      date: '2022-02-23',
-      dateText: 'Fab 23, 2022',
-      title: 'Design conferences in 2022',
-      text: 'Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.'
+      image: '/assets/images/1.jpeg',
+      category: 'Blockchain',
+      date: '2025-10-12',
+      dateText: 'Oct 12, 2025',
+      title: 'A Class Presentation Sparked..',
+      text: 'How one classroom assignment opened the door to a whole new..',
+      link: "https://medium.com/@eltonmorden029/a-class-presentation-sparked-my-blockchain-curiosity-84f5244236aa"
     },
     {
-      image: '/assets/images/blog-2.jpg',
-      category: 'Design',
-      date: '2022-02-23',
-      dateText: 'Fab 23, 2022',
-      title: 'Best fonts every designer',
-      text: 'Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.'
+      image: '/assets/images/2.jpeg',
+      category: 'Blockchain',
+      date: '2025-10-15',
+      dateText: 'Oct 15, 2025',
+      title: 'Cracking Proof of Work: Understanding..',
+      text: 'How a confusing mining puzzle turned into one of my biggest lightbulb...',
+     link: "https://medium.com/@eltonmorden029/cracking-proof-of-work-the-moment-blockchain-started-making-sense-ae8b704c7e71"
     },
     {
-      image: '/assets/images/blog-3.jpg',
-      category: 'Design',
-      date: '2022-02-23',
-      dateText: 'Fab 23, 2022',
-      title: 'Design digest #80',
-      text: 'Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.'
+      image: '/assets/images/3.jpeg',
+      category: 'Blockchain',
+      date: '2025-10-30',
+      dateText: 'Oct 30, 2025',
+      title: 'Proof of Stake: The Smarter, Greener Consensus',
+      text: 'Exploring how Proof of Stake is revolutionizing blockchain with energy efficiency..',
+      link: "https://medium.com/@eltonmorden029/proof-of-stake-the-smarter-greener-consensus-398cff4028f6"
     },
-    {
-      image: '/assets/images/blog-4.jpg',
-      category: 'Design',
-      date: '2022-02-23',
-      dateText: 'Fab 23, 2022',
-      title: 'UI interactions of the week',
-      text: 'Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.'
-    },
-    {
-      image: '/assets/images/blog-5.jpg',
-      category: 'Design',
-      date: '2022-02-23',
-      dateText: 'Fab 23, 2022',
-      title: 'The forgotten art of spacing',
-      text: 'Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    },
-    {
-      image: '/assets/images/blog-6.jpg',
-      category: 'Design',
-      date: '2022-02-23',
-      dateText: 'Fab 23, 2022',
-      title: 'Design digest #79',
-      text: 'Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.'
-    }
+    
   ];
 
   return (
@@ -60,7 +40,7 @@ function Blog() {
         <ul className="blog-posts-list">
           {blogPosts.map((post, index) => (
             <li className="blog-post-item" key={index}>
-              <a href="#">
+              <a href={post.link} target="_blank" rel="noopener noreferrer">
                 <figure className="blog-banner-box">
                   <img src={post.image} alt={post.title} loading="lazy" />
                 </figure>
