@@ -1,60 +1,13 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { projects } from '../data/projectsData';
 
 function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [isSelectOpen, setIsSelectOpen] = useState(false);
+  const navigate = useNavigate();
 
   const categories = ['All', 'Web design', 'Applications', 'Web development'];
-
-  const projects = [
-    {
-      title: 'Tour Ghana',
-      category: 'web development',
-      image: '/assets/images/tourghana.png',
-      link: 'https://tourghana.vercel.app'
-    },
-    {
-      title: 'Cozy Ovens',
-      category: 'web development',
-      image: '/assets/images/cozy.png',
-      link: 'https://cozyovens.example.com'
-    },
-    {
-      title: 'Deal Sourcing Platform',
-      category: 'web design',
-      image: '/assets/images/epcfworld.png'
-    },
-    {
-      title: 'Brawlhalla',
-      category: 'applications',
-      image: '/assets/images/project-4.png'
-    },
-    {
-      title: 'uniCLIQ.',
-      category: 'applications',
-      image: '/assets/images/uni.png'
-    },
-    {
-      title: 'Hirely',
-      category: 'web design',
-      image: '/assets/images/talent1.png'
-    },
-    {
-      title: 'Digital Wallet',
-      category: 'applications',
-      image: '/assets/images/wallet.png'
-    },
-    {
-      title: 'Task Manager',
-      category: 'applications',
-      image: '/assets/images/project-8.jpg'
-    },
-    {
-      title: 'Arrival',
-      category: 'web development',
-      image: '/assets/images/project-9.png'
-    }
-  ];
 
   const handleFilterClick = (category) => {
     setSelectedCategory(category.toLowerCase());
@@ -131,7 +84,11 @@ function Portfolio() {
               data-category={project.category}
               key={index}
             >
-              <a href={project.link} className="project-link" target="_blank" rel="noopener noreferrer">
+              <div 
+                className="project-link" 
+                onClick={() => navigate(`/project/${project.id}`)}
+                style={{ cursor: 'pointer' }}
+              >
                 <figure className="project-img">
                   <div className="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
@@ -143,7 +100,7 @@ function Portfolio() {
                 <h3 className="project-title">{project.title}</h3>
 
                 <p className="project-category">{project.category}</p>
-              </a>
+              </div>
             </li>
           ))}
         </ul>
