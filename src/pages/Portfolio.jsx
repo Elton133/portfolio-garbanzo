@@ -8,19 +8,21 @@ function Portfolio() {
 
   const projects = [
     {
-      title: 'Finance',
+      title: 'Tour Ghana',
       category: 'web development',
-      image: '/assets/images/project-1.jpg'
+      image: '/assets/images/tourghana.png',
+      link: 'https://tourghana.vercel.app'
     },
     {
-      title: 'Orizon',
+      title: 'Cozy Ovens',
       category: 'web development',
-      image: '/assets/images/project-2.png'
+      image: '/assets/images/cozy.png',
+      link: 'https://cozyovens.example.com'
     },
     {
-      title: 'Fundo',
+      title: 'Deal Sourcing Platform',
       category: 'web design',
-      image: '/assets/images/project-3.jpg'
+      image: '/assets/images/epcfworld.png'
     },
     {
       title: 'Brawlhalla',
@@ -28,19 +30,19 @@ function Portfolio() {
       image: '/assets/images/project-4.png'
     },
     {
-      title: 'DSM.',
-      category: 'web design',
-      image: '/assets/images/project-5.png'
+      title: 'uniCLIQ.',
+      category: 'applications',
+      image: '/assets/images/uni.png'
     },
     {
-      title: 'MetaSpark',
+      title: 'Hirely',
       category: 'web design',
-      image: '/assets/images/project-6.png'
+      image: '/assets/images/talent1.png'
     },
     {
-      title: 'Summary',
-      category: 'web development',
-      image: '/assets/images/project-7.png'
+      title: 'Digital Wallet',
+      category: 'applications',
+      image: '/assets/images/wallet.png'
     },
     {
       title: 'Task Manager',
@@ -129,7 +131,7 @@ function Portfolio() {
               data-category={project.category}
               key={index}
             >
-              <a href="#">
+              <a href={project.link} className="project-link" target="_blank" rel="noopener noreferrer">
                 <figure className="project-img">
                   <div className="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>

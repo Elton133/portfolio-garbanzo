@@ -1,45 +1,46 @@
 function Resume() {
   const education = [
     {
-      title: 'University school of the arts',
-      period: '2007 — 2008',
-      text: 'Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur.'
-    },
-    {
-      title: 'New york academy of art',
-      period: '2006 — 2007',
-      text: 'Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus, omnis voluptas assumenda est omnis..'
-    },
-    {
-      title: 'High school of art and design',
-      period: '2002 — 2004',
-      text: 'Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur magni dolores eos.'
-    }
+    title: 'Regional Maritime University',
+    period: '2022 — 2026',
+    text: 'Pursuing a degree in Information Technology, focusing on web development, software engineering, and practical IT solutions.'
+  },
+  {
+    title: 'Udemy Web Developer Bootcamp',
+    period: '2024 — Colt Steele',
+    text: 'Completed a full-stack web development course covering HTML, CSS, JavaScript, Node.js, and front-end frameworks.'
+  },
+  {
+    title: 'AWS Certified Cloud Practitioner',
+    period: '2025',
+    text: 'Earned certification demonstrating understanding of AWS cloud services, architecture, and best practices for deployment.'
+  }
   ];
 
   const experience = [
     {
-      title: 'Creative director',
-      period: '2015 — Present',
+      title: 'Touch Stack Technologies - Frontend Developer',
+      period: '2025 — Present',
       text: 'Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas molestias exceptur.'
     },
     {
-      title: 'Art director',
-      period: '2013 — 2015',
+      title: 'Stanbic Bank Ghana - Internship',
+      period: '2025',
       text: 'Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur.'
     },
     {
-      title: 'Web designer',
-      period: '2010 — 2013',
+      title: 'Partechnologies and Consult',
+      period: '2024',
       text: 'Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur.'
     }
   ];
 
   const skills = [
-    { name: 'Web design', value: 80 },
-    { name: 'Graphic design', value: 70 },
-    { name: 'Branding', value: 90 },
-    { name: 'WordPress', value: 50 }
+    { name: 'Web design and development', value: 80 },
+    { name: 'Mobile app development', value: 70 },
+    { name: 'Blockchain concepts', value: 40 },
+    { name: 'Artificial Intelligence', value: 20 },
+    { name: 'CMS', value: 50 }
   ];
 
   return (
