@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Euclid-Circular-B";
+  src: url("../fonts/Euclid-Circular-B.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   /**
    * colors
@@ -18,7 +25,7 @@
     hsl(240, 2%, 13%);
   --bg-gradient-yellow-1: linear-gradient(
     to bottom right,
-    hsl(45, 100%, 71%) 0%,
+    rgb(255, 218, 107) 0%,
     hsla(36, 100%, 69%, 0) 50%
   );
   --bg-gradient-yellow-2: linear-gradient(
@@ -35,7 +42,7 @@
   --text-gradient-yellow: linear-gradient(
     to right,
     hsl(0, 0%, 74%),
-    hsl(228, 92%, 37%)
+    hsl(45, 84%, 52%) 
   );
 
   /* solid */
@@ -47,8 +54,8 @@
   --smoky-black: hsl(0, 0%, 7%);
   --white-1: hsl(0, 0%, 100%);
   --white-2: hsl(0, 0%, 98%);
-  --orange-yellow-crayola: hsl(219, 87%, 27%);
-  --vegas-gold: hsl(216, 65%, 38%);
+  --orange-yellow-crayola: hsl(45, 100%, 71%) ;
+  --vegas-gold: hsl(45, 84%, 52%) ;
   --light-gray: hsl(0, 0%, 84%);
   --light-gray-70: hsla(0, 0%, 84%, 0.7);
   --bittersweet-shimmer: hsl(0, 43%, 51%);
@@ -58,7 +65,7 @@
    */
 
   /* font-family */
-  --ff-poppins: "Fredoka", sans-serif;
+  --ff-poppins: "Euclid-Circular-B", sans-serif;
 
   /* font-size */
   --fs-1: 24px;
@@ -162,7 +169,7 @@ body {
 
 .sidebar,
 article {
-  background: var(--eerie-black-2);
+  /* background: var(--eerie-black-2); */
   border: 1px solid var(--jet);
   border-radius: 20px;
   padding: 15px;

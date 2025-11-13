@@ -15,9 +15,9 @@ function About() {
       text: 'High-quality development of sites at the professional level.'
     },
     {
-      icon: '/assets/images/icon-photo.svg',
-      title: 'Cloud Computing in progres',
-      text: 'Taking a deep dive into Amazon Web Services'
+      icon: '/assets/images/icon-quote.svg',
+      title: 'Currently done with the AWS CCP program',
+      text: 'Taking a deep dive into Amazon Web Services next'
     }
   ];
 
@@ -44,14 +44,14 @@ function About() {
     }
   ];
 
-  const clients = [
-    '/assets/images/logo-1-color.png',
-    '/assets/images/logo-2-color.png',
-    '/assets/images/logo-3-color.png',
-    '/assets/images/logo-4-color.png',
-    '/assets/images/logo-5-color.png',
-    '/assets/images/logo-6-color.png'
-  ];
+  // const clients = [
+  //   '/assets/images/logo-1-color.png',
+  //   '/assets/images/logo-2-color.png',
+  //   '/assets/images/logo-3-color.png',
+  //   '/assets/images/logo-4-color.png',
+  //   '/assets/images/logo-5-color.png',
+  //   '/assets/images/logo-6-color.png'
+  // ];
 
   const openModal = (testimonial) => {
     setModalData(testimonial);
@@ -68,16 +68,17 @@ function About() {
       </header>
 
       <section className="about-text">
-        <p>
-          I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media.
-          I enjoy turning complex problems into simple, beautiful and intuitive designs.
-        </p>
+       <p>
+  I'm a Front-End Developer and I.T student from Ghana, passionate about creating clean, responsive, and visually engaging digital experiences.
+  I love transforming ideas into functional and interactive interfaces that not only look great but feel effortless to use.
+</p>
 
-        <p>
-          My job is to build your website so that it is functional and user-friendly but at the same time attractive.
-          Moreover, I add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring
-          across your message and identity in the most creative way. I created web design for many famous brand companies.
-        </p>
+<p>
+  My focus is on building smooth, user-friendly websites and apps that reflect both creativity and precision.
+  Every project I take on gets a personal touch — I care about the flow, the details, and how users actually feel using it.
+  My goal is simple: to blend design and technology in a way that brings your brand’s story to life on screen.
+</p>
+
       </section>
 
       {/* Service */}
@@ -163,7 +164,7 @@ function About() {
       )}
 
       {/* Clients */}
-      <section className="clients">
+      {/* <section className="clients">
         <h3 className="h3 clients-title">Clients</h3>
 
         <ul className="clients-list has-scrollbar">
@@ -175,7 +176,7 @@ function About() {
             </li>
           ))}
         </ul>
-      </section>
+      </section> */}
     </article>
   );
 }
