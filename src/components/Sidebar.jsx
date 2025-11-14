@@ -78,19 +78,13 @@ function Sidebar() {
 
         <ul className="social-list">
           <li className="social-item">
-            <a href="#" className="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
+            <a href="http://linkedin.com/in/elton-john-morden-9a7bb5261" className="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
             </a>
           </li>
 
           <li className="social-item">
-            <a href="#" className="social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-
-          <li className="social-item">
-            <a href="#" className="social-link">
+            <a href="https://www.instagram.com/_.el_ton?igsh=MjVhdXUzNDNudjZl&utm_source=qr" className="social-link">
               <ion-icon name="logo-instagram"></ion-icon>
             </a>
           </li>
