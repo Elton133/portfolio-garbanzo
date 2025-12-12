@@ -69,15 +69,15 @@ function About() {
 
       <section className="about-text">
        <p>
-  I'm a Front-End Developer and I.T student from Ghana, passionate about creating clean, responsive, and visually engaging digital experiences.
-  I love transforming ideas into functional and interactive interfaces that not only look great but feel effortless to use.
-</p>
+        I'm a Front-End Developer and I.T student from Ghana, passionate about creating clean, responsive, and visually engaging digital experiences.
+        I love transforming ideas into functional and interactive interfaces that not only look great but feel effortless to use.
+      </p>
 
-<p>
-  My focus is on building smooth, user-friendly websites and apps that reflect both creativity and precision.
-  Every project I take on gets a personal touch — I care about the flow, the details, and how users actually feel using it.
-  My goal is simple: to blend design and technology in a way that brings your brand’s story to life on screen.
-</p>
+      <p>
+        My focus is on building smooth, user-friendly websites and apps that reflect both creativity and precision.
+        Every project I take on gets a personal touch — I care about the flow, the details, and how users actually feel using it.
+        My goal is simple: to blend design and technology in a way that brings your brand’s story to life on screen.
+      </p>
 
       </section>
 
@@ -101,7 +101,6 @@ function About() {
         </ul>
       </section>
 
-      {/* Testimonials */}
       <section className="testimonials">
         <h3 className="h3 testimonials-title">Testimonials</h3>
 
@@ -130,7 +129,7 @@ function About() {
         </ul>
       </section>
 
-      {/* Testimonials Modal */}
+
       {modalData && (
         <div className="modal-container active" data-modal-container>
           <div className="overlay" data-overlay onClick={closeModal}></div>
