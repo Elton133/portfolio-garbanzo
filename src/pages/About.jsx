@@ -81,7 +81,6 @@ function About() {
 
       </section>
 
-      {/* Service */}
       <section className="service">
         <h3 className="h3 service-title">What i'm doing</h3>
 
