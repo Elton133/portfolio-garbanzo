@@ -26,7 +26,7 @@ function Resume() {
     {
       title: 'Stanbic Bank Ghana - Internship',
       period: '2025',
-      text: 'Nemo enim ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur.'
+      text: 'Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur.'
     },
     {
       title: 'Partechnologies and Consult',
