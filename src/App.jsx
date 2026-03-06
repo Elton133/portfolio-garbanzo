@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import './style.css';
 import Sidebar from './components/Sidebar';
@@ -35,6 +37,11 @@ function App() {
     navigate(`/${page === 'about' ? '' : page}`);
   };
 
+  useGSAP(() => {
+    gsap.from('.sidebar', { x: -50, opacity: 0, duration: 1, ease: 'power3.out' });
+    gsap.from('.navbar', { y: 50, opacity: 0, duration: 1, ease: 'power3.out', delay: 0.2 });
+  }, []);
+
   return (
     <main>
       <Helmet>
@@ -49,7 +56,7 @@ function App() {
         <link rel="icon" href="/favicon.ico" />
 
         <script type="application/ld+json">
-      {`
+          {`
       {
         "@context": "https://schema.org",
         "@type": "Person",
@@ -62,12 +69,12 @@ function App() {
         ]
       }
     `}
-  </script>
+        </script>
       </Helmet>
       <Sidebar />
       <div className="main-content">
         <Navbar activePage={activePage} setActivePage={handlePageChange} />
-        
+
         <Routes>
           <Route path="/" element={<About />} />
           <Route path="/about" element={<About />} />

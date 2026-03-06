@@ -1,7 +1,17 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function Sidebar() {
   const [isActive, setIsActive] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
+
+  useEffect(() => {
+    document.body.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prevTheme => (prevTheme === 'dark' ? 'light' : 'dark'));
+  };
 
   const toggleSidebar = () => {
     setIsActive(!isActive);
@@ -9,9 +19,13 @@ function Sidebar() {
 
   return (
     <aside className={`sidebar ${isActive ? 'active' : ''}`} data-sidebar>
+      <button className="theme-btn" onClick={toggleTheme} aria-label="Toggle Theme">
+        <ion-icon name={theme === 'dark' ? 'sunny-outline' : 'moon-outline'}></ion-icon>
+      </button>
+
       <div className="sidebar-info">
         <figure className="avatar-box">
-          <img src="/assets/images/my-avatar.png" alt="Elton John Morden" width="80" />
+          <img src="/assets/images/elton.png" alt="Elton John Morden" width="80" />
         </figure>
 
         <div className="info-content">
@@ -89,6 +103,15 @@ function Sidebar() {
             </a>
           </li>
         </ul>
+
+        <a
+          href="/assets/resume.pdf"
+          download
+          className="form-btn sidebar-cv-btn"
+        >
+          <ion-icon name="download-outline"></ion-icon>
+          <span>Download my CV</span>
+        </a>
       </div>
     </aside>
   );

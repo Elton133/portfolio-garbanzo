@@ -29,8 +29,8 @@ export const projects = [
     title: "Cozy Ovens",
     category: "web development",
     image:
-      "https://res.cloudinary.com/dklqsfwcu/image/upload/v1763070286/cozy_liech3.png",
-    link: "https://cozyovens.example.com",
+      "https://res.cloudinary.com/dklqsfwcu/image/upload/v1772807018/cozy_rab7dn.png",
+    link: "https://cozyovens.store",
     description:
       "A delightful bakery website that brings the warmth and comfort of freshly baked goods to your screen.",
     background:
@@ -45,7 +45,7 @@ export const projects = [
       "Mobile-friendly interface",
     ],
     links: {
-      live: "https://cozyovens.example.com",
+      live: "https://cozyoven.store",
       github: null,
     },
   },
@@ -54,7 +54,7 @@ export const projects = [
     title: "Deal Sourcing Platform",
     category: "web design",
     image: "/assets/images/epcfworld.png",
-    link: null,
+    link: "https://epcfworld.netlify.app",
     description:
       "A professional platform designed for EPCF World to streamline deal sourcing and investment opportunities.",
     background:
@@ -69,35 +69,35 @@ export const projects = [
       "Responsive layout design",
     ],
     links: {
-      live: null,
+      live: "https://epcfworld.netlify.app",
       github: null,
     },
   },
-  {
-    id: "brawlhalla",
-    title: "Brawlhalla",
-    category: "applications",
-    image:
-      "https://res.cloudinary.com/dklqsfwcu/image/upload/v1763070186/project-4_ea3j8p.png",
-    link: null,
-    description:
-      "A gaming companion application for Brawlhalla players to track stats, learn strategies, and improve their gameplay.",
-    background:
-      "Brawlhalla players often need tools to track their progress and learn more about the game. This application was conceptualized to provide players with useful resources and statistics.",
-    ideation:
-      "The idea was to create a companion app that enhances the gaming experience by providing insights, character information, and community features that help players improve and connect.",
-    techStack: ["React", "Game APIs", "Data Visualization", "Local Storage"],
-    features: [
-      "Player statistics tracking",
-      "Character information database",
-      "Strategy guides",
-      "Match history",
-    ],
-    links: {
-      live: null,
-      github: null,
-    },
-  },
+  // {
+  //   id: "brawlhalla",
+  //   title: "Brawlhalla",
+  //   category: "applications",
+  //   image:
+  //     "https://res.cloudinary.com/dklqsfwcu/image/upload/v1763070186/project-4_ea3j8p.png",
+  //   link: null,
+  //   description:
+  //     "A gaming companion application for Brawlhalla players to track stats, learn strategies, and improve their gameplay.",
+  //   background:
+  //     "Brawlhalla players often need tools to track their progress and learn more about the game. This application was conceptualized to provide players with useful resources and statistics.",
+  //   ideation:
+  //     "The idea was to create a companion app that enhances the gaming experience by providing insights, character information, and community features that help players improve and connect.",
+  //   techStack: ["React", "Game APIs", "Data Visualization", "Local Storage"],
+  //   features: [
+  //     "Player statistics tracking",
+  //     "Character information database",
+  //     "Strategy guides",
+  //     "Match history",
+  //   ],
+  //   links: {
+  //     live: null,
+  //     github: null,
+  //   },
+  // },
   {
     id: "unicliq",
     title: "uniCLIQ.",
@@ -148,84 +148,131 @@ export const projects = [
       github: null,
     },
   },
+  // {
+  //   id: "digital-wallet",
+  //   title: "Digital Wallet",
+  //   category: "applications",
+  //   image:
+  //     "https://res.cloudinary.com/dklqsfwcu/image/upload/v1763070192/wallet_bktvb5.png",
+  //   link: null,
+  //   description:
+  //     "A secure digital wallet application for managing finances, making payments, and tracking expenses.",
+  //   background:
+  //     "As digital payments become more prevalent, users need secure and convenient ways to manage their money. This digital wallet was designed with security and user experience as top priorities.",
+  //   ideation:
+  //     "The goal was to create a comprehensive financial management tool that combines the convenience of digital payments with robust security features and expense tracking capabilities.",
+  //   techStack: [
+  //     "React Native",
+  //     "Firebase",
+  //     "Encryption APIs",
+  //   ],
+  //   features: [
+  //     ""
+  //   ],
+  //   links: {
+  //     live: null,
+  //     github: null,
+  //   },
+  // },
+  // {
+  //   id: "task-manager",
+  //   title: "Task Manager",
+  //   category: "applications",
+  //   image:
+  //     "https://res.cloudinary.com/dklqsfwcu/image/upload/v1763070187/project-8_pqyuda.jpg",
+  //   link: null,
+  //   description:
+  //     "A productivity application helping users organize tasks, set priorities, and achieve their goals.",
+  //   background:
+  //     "Effective task management is crucial for productivity. This application was created to provide a simple yet powerful tool for organizing work and personal tasks.",
+  //   ideation:
+  //     "The concept was to build a task manager that balances simplicity with functionality, making it easy for users to capture, organize, and complete their tasks without overwhelming complexity.",
+  //   techStack: ["React", "TypeScript", "IndexedDB", "PWA"],
+  //   features: [
+  //     "Task creation and organization",
+  //     "Priority levels and due dates",
+  //     "Category and tag system",
+  //     "Offline functionality",
+  //   ],
+  //   links: {
+  //     live: null,
+  //     github: null,
+  //   },
+  // },
+
   {
-    id: "digital-wallet",
-    title: "Digital Wallet",
-    category: "applications",
-    image:
-      "https://res.cloudinary.com/dklqsfwcu/image/upload/v1763070192/wallet_bktvb5.png",
-    link: null,
-    description:
-      "A secure digital wallet application for managing finances, making payments, and tracking expenses.",
-    background:
-      "As digital payments become more prevalent, users need secure and convenient ways to manage their money. This digital wallet was designed with security and user experience as top priorities.",
-    ideation:
-      "The goal was to create a comprehensive financial management tool that combines the convenience of digital payments with robust security features and expense tracking capabilities.",
-    techStack: [
-      "React Native",
-      "Firebase",
-      "Encryption APIs",
-      "Payment Gateways",
-    ],
-    features: [
-      "Secure payment processing",
-      "Transaction history",
-      "Expense tracking and analytics",
-      "Multi-currency support",
-    ],
-    links: {
-      live: null,
-      github: null,
-    },
-  },
-  {
-    id: "task-manager",
-    title: "Task Manager",
-    category: "applications",
-    image:
-      "https://res.cloudinary.com/dklqsfwcu/image/upload/v1763070187/project-8_pqyuda.jpg",
-    link: null,
-    description:
-      "A productivity application helping users organize tasks, set priorities, and achieve their goals.",
-    background:
-      "Effective task management is crucial for productivity. This application was created to provide a simple yet powerful tool for organizing work and personal tasks.",
-    ideation:
-      "The concept was to build a task manager that balances simplicity with functionality, making it easy for users to capture, organize, and complete their tasks without overwhelming complexity.",
-    techStack: ["React", "TypeScript", "IndexedDB", "PWA"],
-    features: [
-      "Task creation and organization",
-      "Priority levels and due dates",
-      "Category and tag system",
-      "Offline functionality",
-    ],
-    links: {
-      live: null,
-      github: null,
-    },
-  },
-  {
-    id: "arrival",
-    title: "Arrival",
+    id: "sabarytours",
+    title: "Sabary Tours",
     category: "web development",
     image:
-      "https://res.cloudinary.com/dklqsfwcu/image/upload/v1763070188/project-9_kqxinh.png",
+      "https://res.cloudinary.com/dklqsfwcu/image/upload/v1772807515/Screenshot_2026-03-06_143049_nqfkwf.png",
     link: null,
     description:
-      "A landing page for a modern transportation or delivery service focused on timely arrivals.",
-    background:
-      "In the competitive transportation industry, companies need compelling digital presence to attract customers. Arrival was designed to showcase reliability and professionalism.",
+      "A tour platform connecting users with local tour guides and experiences.",
+    background: 
+      "In the competitive tour industry, companies need compelling digital presence to attract customers. Sabary Tours was designed to showcase reliability and professionalism.",
     ideation:
       "The design philosophy centered on communicating trust, speed, and efficiency through clean visuals and clear messaging about the service's value proposition.",
-    techStack: ["HTML5", "CSS3", "JavaScript", "Animation Libraries"],
+    techStack: ["Nextjs", "Tailwind CSS", "TypeScript", "Framer Motion", "Zustand State Management", "Paystack Payment Integration"],
     features: [
-      "Engaging hero section",
-      "Service highlights",
-      "Customer testimonials",
-      "Call-to-action optimization",
+      "Modern and responsive design",
+      "Interactive and engaging user interface",
+      "Dynamic and interactive tour listings",
+      "Seamless booking process",
+      "Responsive and mobile-friendly design",
+      "Fast and efficient loading times",
     ],
     links: {
-      live: null,
+      live: "https://sabarytours.vercel.app",
       github: null,
     },
   },
+  {
+    id: "complaint-system",
+    title: "Complaint Management System",
+    category: "web development",
+    image:
+      "https://res.cloudinary.com/dklqsfwcu/image/upload/v1772810520/Screenshot_2026-03-06_151937_xgbus8.png",
+    link: "https://rmusgms.vercel.app",
+    description:
+      "A highly dynamic complaint management system which can be integrated into any existing web platform, has webhooks for 3rd parties and can generate API keys for usage.",
+    background: 
+      "This started as a final year project but the idea quickly evolved into something much bigger and more complex. This idea came about in my literature review after i had realized that most organizations and universities do not have systems to manage student complaints and grievances effectively",
+    ideation:
+      "The idea was to create a system that could be used by any organization to manage complaints and grievances effectively. It had to be easy to use, secure, and scalable. It also had to be able to integrate with other systems, which is why i added webhooks and API keys.",
+    techStack: ["Nextjs", "Tailwind CSS", "TypeScript"],
+    features: [
+      "Modern and responsive design",
+      "Interactive and engaging user interface",
+    ],
+    links: {
+      live: "https://rmusgms.vercel.app",
+      github: null,
+    },
+  },
+  // {
+  //   id: "arrival",
+  //   title: "Arrival",
+  //   category: "web development",
+  //   image:
+  //     "https://res.cloudinary.com/dklqsfwcu/image/upload/v1763070188/project-9_kqxinh.png",
+  //   link: null,
+  //   description:
+  //     "A landing page for a modern transportation or delivery service focused on timely arrivals.",
+  //   background:
+  //     "In the competitive transportation industry, companies need compelling digital presence to attract customers. Arrival was designed to showcase reliability and professionalism.",
+  //   ideation:
+  //     "The design philosophy centered on communicating trust, speed, and efficiency through clean visuals and clear messaging about the service's value proposition.",
+  //   techStack: ["HTML5", "CSS3", "JavaScript", "Animation Libraries"],
+  //   features: [
+  //     "Engaging hero section",
+  //     "Service highlights",
+  //     "Customer testimonials",
+  //     "Call-to-action optimization",
+  //   ],
+  //   links: {
+  //     live: null,
+  //     github: null,
+  //   },
+  // },
 ];

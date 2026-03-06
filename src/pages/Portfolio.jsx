@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 import { projects } from '../data/projectsData';
 
 function Portfolio() {
@@ -26,8 +28,15 @@ function Portfolio() {
     ? projects
     : projects.filter(project => project.category === selectedCategory);
 
+  const container = useRef();
+
+  useGSAP(() => {
+    gsap.from('.article-title', { y: -20, opacity: 0, duration: 0.8, ease: 'power3.out' });
+    gsap.from('.project-item', { scale: 0.8, opacity: 0, duration: 0.5, stagger: 0.1, ease: 'power3.out' });
+  }, { scope: container, dependencies: [selectedCategory] });
+
   return (
-    <article className="portfolio active" data-page="portfolio">
+    <article className="portfolio active" data-page="portfolio" ref={container}>
       <header>
         <h2 className="h2 article-title">Portfolio</h2>
       </header>
@@ -48,8 +57,8 @@ function Portfolio() {
         </ul>
 
         <div className="filter-select-box">
-          <button 
-            className={`filter-select ${isSelectOpen ? 'active' : ''}`} 
+          <button
+            className={`filter-select ${isSelectOpen ? 'active' : ''}`}
             data-select
             onClick={handleSelectClick}
           >
@@ -65,7 +74,7 @@ function Portfolio() {
           <ul className="select-list">
             {categories.map((category, index) => (
               <li className="select-item" key={index}>
-                <button 
+                <button
                   data-select-item
                   onClick={() => handleSelectItemClick(category)}
                 >
@@ -84,8 +93,8 @@ function Portfolio() {
               data-category={project.category}
               key={index}
             >
-              <div 
-                className="project-link" 
+              <div
+                className="project-link"
                 onClick={() => navigate(`/project/${project.id}`)}
                 style={{ cursor: 'pointer' }}
               >

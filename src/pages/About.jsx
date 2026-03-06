@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 function About() {
   const [modalData, setModalData] = useState(null);
@@ -18,6 +20,11 @@ function About() {
       icon: '/assets/images/icon-quote.svg',
       title: 'Currently done with the AWS CCP program',
       text: 'Taking a deep dive into Amazon Web Services next'
+    },
+    {
+      icon: '/assets/images/icon-dev.svg',
+      title: 'Getting my hands dirty with spring boot backend development',
+      text: 'Building skills to be valuable in the thriving tech industry'
     }
   ];
 
@@ -61,23 +68,32 @@ function About() {
     setModalData(null);
   };
 
+  const container = useRef();
+
+  useGSAP(() => {
+    gsap.from('.article-title', { y: -20, opacity: 0, duration: 0.8, ease: 'power3.out' });
+    gsap.from('.about-text p', { y: 20, opacity: 0, duration: 0.8, stagger: 0.2, ease: 'power3.out' });
+    gsap.from('.service-item', { scale: 0.9, opacity: 0, duration: 0.8, stagger: 0.2, ease: 'back.out(1.7)' });
+    gsap.from('.content-card', { y: 30, opacity: 0, duration: 0.8, stagger: 0.2, ease: 'power3.out' });
+  }, { scope: container });
+
   return (
-    <article className="about active" data-page="about">
+    <article className="about active" data-page="about" ref={container}>
       <header>
         <h2 className="h2 article-title">About me</h2>
       </header>
 
       <section className="about-text">
-       <p>
-        I'm a Front-End Developer and I.T student from Ghana, passionate about creating clean, responsive, and visually engaging digital experiences.
-        I love transforming ideas into functional and interactive interfaces that not only look great but feel effortless to use.
-      </p>
+        <p>
+          I'm a Front-End Developer and I.T student from Ghana, passionate about creating clean, responsive, and visually engaging digital experiences.
+          I love transforming ideas into functional and interactive interfaces that not only look great but feel effortless to use.
+        </p>
 
-      <p>
-        My focus is on building smooth, user-friendly websites and apps that reflect both creativity and precision.
-        Every project I take on gets a personal touch — I care about the flow, the details, and how users actually feel using it.
-        My goal is simple: to blend design and technology in a way that brings your brand’s story to life on screen.
-      </p>
+        <p>
+          My focus is on building smooth, user-friendly websites and apps that reflect both creativity and precision.
+          Every project I take on gets a personal touch — I care about the flow, the details, and how users actually feel using it.
+          My goal is simple: to blend design and technology in a way that brings your brand’s story to life on screen.
+        </p>
 
       </section>
 
@@ -106,8 +122,8 @@ function About() {
         <ul className="testimonials-list has-scrollbar">
           {testimonials.map((testimonial, index) => (
             <li className="testimonials-item" key={index}>
-              <div 
-                className="content-card" 
+              <div
+                className="content-card"
                 data-testimonials-item
                 onClick={() => openModal(testimonial)}
               >
