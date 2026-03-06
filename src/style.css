@@ -369,7 +369,7 @@ main {
 }
 
 .sidebar.active {
-  max-height: 405px;
+  max-height: 700px;
 }
 
 .sidebar-info {
@@ -449,7 +449,7 @@ main {
 .theme-btn {
   position: absolute;
   top: 15px;
-  left: 15px;
+  right: 15px;
   border-radius: 24px 0;
   font-size: 18px;
   color: var(--orange-yellow-crayola);
@@ -1513,12 +1513,12 @@ textarea.form-input::-webkit-resizer {
    */
 
   .sidebar {
-    max-height: 180px;
+    max-height: 220px;
     margin-bottom: 30px;
   }
 
   .sidebar.active {
-    max-height: 584px;
+    max-height: 750px;
   }
 
   .sidebar-info {
