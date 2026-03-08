@@ -247,22 +247,7 @@ article {
 }
 
 article {
-  display: none;
-}
-
-article.active {
   display: block;
-  animation: fade 0.5s ease backwards;
-}
-
-@keyframes fade {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
 }
 
 .h2,
@@ -2327,5 +2312,62 @@ textarea.form-input::-webkit-resizer {
   .btn-secondary {
     padding: 14px 28px;
     font-size: var(--fs-5);
+  }
+}
+
+/*-----------------------------------*\
+  #CUSTOM CURSOR
+\*-----------------------------------*/
+
+@media (hover: hover) and (pointer: fine) {
+
+  html,
+  body,
+  a,
+  button,
+  input,
+  textarea,
+  .project-link,
+  .content-card {
+    cursor: none !important;
+  }
+}
+
+.custom-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: var(--orange-yellow-crayola);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.custom-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--orange-yellow-crayola);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  box-sizing: border-box;
+}
+
+/*-----------------------------------*\
+  #SKELETON LOADER
+\*-----------------------------------*/
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
   }
 }

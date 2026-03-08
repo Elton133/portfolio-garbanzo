@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import PageTransition from '../components/PageTransition';
 
 function About() {
   const [modalData, setModalData] = useState(null);
@@ -78,107 +79,108 @@ function About() {
   }, { scope: container });
 
   return (
-    <article className="about active" data-page="about" ref={container}>
-      <header>
-        <h2 className="h2 article-title">About me</h2>
-      </header>
+    <PageTransition className="about" id="about">
+      <div ref={container}>
+        <header>
+          <h2 className="h2 article-title">About me</h2>
+        </header>
 
-      <section className="about-text">
-        <p>
-          I'm a Front-End Developer and I.T student from Ghana, passionate about creating clean, responsive, and visually engaging digital experiences.
-          I love transforming ideas into functional and interactive interfaces that not only look great but feel effortless to use.
-        </p>
+        <section className="about-text">
+          <p>
+            I'm a Front-End Developer and I.T student from Ghana, passionate about creating clean, responsive, and visually engaging digital experiences.
+            I love transforming ideas into functional and interactive interfaces that not only look great but feel effortless to use.
+          </p>
 
-        <p>
-          My focus is on building smooth, user-friendly websites and apps that reflect both creativity and precision.
-          Every project I take on gets a personal touch — I care about the flow, the details, and how users actually feel using it.
-          My goal is simple: to blend design and technology in a way that brings your brand’s story to life on screen.
-        </p>
+          <p>
+            My focus is on building smooth, user-friendly websites and apps that reflect both creativity and precision.
+            Every project I take on gets a personal touch — I care about the flow, the details, and how users actually feel using it.
+            My goal is simple: to blend design and technology in a way that brings your brand’s story to life on screen.
+          </p>
 
-      </section>
+        </section>
 
-      <section className="service">
-        <h3 className="h3 service-title">What i'm doing</h3>
+        <section className="service">
+          <h3 className="h3 service-title">What i'm doing</h3>
 
-        <ul className="service-list">
-          {services.map((service, index) => (
-            <li className="service-item" key={index}>
-              <div className="service-icon-box">
-                <img src={service.icon} alt={`${service.title} icon`} width="40" />
-              </div>
+          <ul className="service-list">
+            {services.map((service, index) => (
+              <li className="service-item" key={index}>
+                <div className="service-icon-box">
+                  <img src={service.icon} alt={`${service.title} icon`} width="40" />
+                </div>
 
-              <div className="service-content-box">
-                <h4 className="h4 service-item-title">{service.title}</h4>
-                <p className="service-item-text">{service.text}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </section>
+                <div className="service-content-box">
+                  <h4 className="h4 service-item-title">{service.title}</h4>
+                  <p className="service-item-text">{service.text}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
 
-      <section className="testimonials">
-        <h3 className="h3 testimonials-title">Testimonials</h3>
+        <section className="testimonials">
+          <h3 className="h3 testimonials-title">Testimonials</h3>
 
-        <ul className="testimonials-list has-scrollbar">
-          {testimonials.map((testimonial, index) => (
-            <li className="testimonials-item" key={index}>
-              <div
-                className="content-card"
-                data-testimonials-item
-                onClick={() => openModal(testimonial)}
-              >
-                <figure className="testimonials-avatar-box">
-                  <img src={testimonial.avatar} alt={testimonial.name} width="60" data-testimonials-avatar />
+          <ul className="testimonials-list has-scrollbar">
+            {testimonials.map((testimonial, index) => (
+              <li className="testimonials-item" key={index}>
+                <div
+                  className="content-card"
+                  data-testimonials-item
+                  onClick={() => openModal(testimonial)}
+                >
+                  <figure className="testimonials-avatar-box">
+                    <img src={testimonial.avatar} alt={testimonial.name} width="60" data-testimonials-avatar />
+                  </figure>
+
+                  <h4 className="h4 testimonials-item-title" data-testimonials-title>
+                    {testimonial.name}
+                  </h4>
+
+                  <div className="testimonials-text" data-testimonials-text>
+                    <p>{testimonial.text}</p>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+
+        {modalData && (
+          <div className="modal-container active" data-modal-container>
+            <div className="overlay" data-overlay onClick={closeModal}></div>
+
+            <section className="testimonials-modal">
+              <button className="modal-close-btn" data-modal-close-btn onClick={closeModal}>
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+
+              <div className="modal-img-wrapper">
+                <figure className="modal-avatar-box">
+                  <img src={modalData.avatar} alt={modalData.name} width="80" data-modal-img />
                 </figure>
 
-                <h4 className="h4 testimonials-item-title" data-testimonials-title>
-                  {testimonial.name}
+                <img src="/assets/images/icon-quote.svg" alt="quote icon" />
+              </div>
+
+              <div className="modal-content">
+                <h4 className="h3 modal-title" data-modal-title>
+                  {modalData.name}
                 </h4>
 
-                <div className="testimonials-text" data-testimonials-text>
-                  <p>{testimonial.text}</p>
+                <time dateTime="2021-06-14">14 June, 2021</time>
+
+                <div data-modal-text>
+                  <p>{modalData.text}</p>
                 </div>
               </div>
-            </li>
-          ))}
-        </ul>
-      </section>
+            </section>
+          </div>
+        )}
 
-
-      {modalData && (
-        <div className="modal-container active" data-modal-container>
-          <div className="overlay" data-overlay onClick={closeModal}></div>
-
-          <section className="testimonials-modal">
-            <button className="modal-close-btn" data-modal-close-btn onClick={closeModal}>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div className="modal-img-wrapper">
-              <figure className="modal-avatar-box">
-                <img src={modalData.avatar} alt={modalData.name} width="80" data-modal-img />
-              </figure>
-
-              <img src="/assets/images/icon-quote.svg" alt="quote icon" />
-            </div>
-
-            <div className="modal-content">
-              <h4 className="h3 modal-title" data-modal-title>
-                {modalData.name}
-              </h4>
-
-              <time dateTime="2021-06-14">14 June, 2021</time>
-
-              <div data-modal-text>
-                <p>{modalData.text}</p>
-              </div>
-            </div>
-          </section>
-        </div>
-      )}
-
-      {/* Clients */}
-      {/* <section className="clients">
+        {/* Clients */}
+        {/* <section className="clients">
         <h3 className="h3 clients-title">Clients</h3>
 
         <ul className="clients-list has-scrollbar">
@@ -191,7 +193,8 @@ function About() {
           ))}
         </ul>
       </section> */}
-    </article>
+      </div>
+    </PageTransition>
   );
 }
 

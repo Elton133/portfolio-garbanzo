@@ -1,6 +1,9 @@
 import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import { motion } from 'framer-motion';
+import PageTransition from '../components/PageTransition';
+import MagneticButton from '../components/MagneticButton';
 
 function Resume() {
   const education = [
@@ -61,68 +64,76 @@ function Resume() {
   }, { scope: container });
 
   return (
-    <article className="resume active" data-page="resume" ref={container}>
-      <header>
+    <PageTransition className="resume" id="resume">
+      <div ref={container}>
+        <header>
 
-      </header>
+        </header>
 
-      <section className="timeline">
-        <div className="title-wrapper">
-          <div className="icon-box">
-            <ion-icon name="book-outline"></ion-icon>
+        <section className="timeline">
+          <div className="title-wrapper">
+            <div className="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 className="h3">Education</h3>
           </div>
-          <h3 className="h3">Education</h3>
-        </div>
 
-        <ol className="timeline-list">
-          {education.map((item, index) => (
-            <li className="timeline-item" key={index}>
-              <h4 className="h4 timeline-item-title">{item.title}</h4>
-              <span>{item.period}</span>
-              <p className="timeline-text">{item.text}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
+          <ol className="timeline-list">
+            {education.map((item, index) => (
+              <li className="timeline-item" key={index}>
+                <h4 className="h4 timeline-item-title">{item.title}</h4>
+                <span>{item.period}</span>
+                <p className="timeline-text">{item.text}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
 
-      <section className="timeline">
-        <div className="title-wrapper">
-          <div className="icon-box">
-            <ion-icon name="book-outline"></ion-icon>
+        <section className="timeline">
+          <div className="title-wrapper">
+            <div className="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 className="h3">Experience</h3>
           </div>
-          <h3 className="h3">Experience</h3>
-        </div>
 
-        <ol className="timeline-list">
-          {experience.map((item, index) => (
-            <li className="timeline-item" key={index}>
-              <h4 className="h4 timeline-item-title">{item.title}</h4>
-              <span>{item.period}</span>
-              <p className="timeline-text">{item.text}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
+          <ol className="timeline-list">
+            {experience.map((item, index) => (
+              <li className="timeline-item" key={index}>
+                <h4 className="h4 timeline-item-title">{item.title}</h4>
+                <span>{item.period}</span>
+                <p className="timeline-text">{item.text}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
 
-      <section className="skill">
-        <h3 className="h3 skills-title">My skills</h3>
+        <section className="skill">
+          <h3 className="h3 skills-title">My skills</h3>
 
-        <ul className="skills-list content-card">
-          {skills.map((skill, index) => (
-            <li className="skills-item" key={index}>
-              <div className="title-wrapper">
-                <h5 className="h5">{skill.name}</h5>
-                <data value={skill.value}>{skill.value}%</data>
-              </div>
+          <ul className="skills-list content-card">
+            {skills.map((skill, index) => (
+              <li className="skills-item" key={index}>
+                <div className="title-wrapper">
+                  <h5 className="h5">{skill.name}</h5>
+                  <data value={skill.value}>{skill.value}%</data>
+                </div>
 
-              <div className="skill-progress-bg">
-                <div className="skill-progress-fill" style={{ width: `${skill.value}%` }}></div>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </article>
+                <div className="skill-progress-bg">
+                  <motion.div
+                    className="skill-progress-fill"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${skill.value}%` }}
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 1, ease: 'easeOut' }}
+                  />
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </div>
+    </PageTransition>
   );
 }
 

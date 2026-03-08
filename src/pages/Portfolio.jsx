@@ -1,7 +1,9 @@
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useGSAP } from '@gsap/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import gsap from 'gsap';
+import PageTransition from '../components/PageTransition';
 import { projects } from '../data/projectsData';
 
 function Portfolio() {
@@ -36,85 +38,94 @@ function Portfolio() {
   }, { scope: container, dependencies: [selectedCategory] });
 
   return (
-    <article className="portfolio active" data-page="portfolio" ref={container}>
-      <header>
-        <h2 className="h2 article-title">Portfolio</h2>
-      </header>
+    <PageTransition className="portfolio" id="portfolio">
+      <div ref={container}>
+        <header>
+          <h2 className="h2 article-title">Portfolio</h2>
+        </header>
 
-      <section className="projects">
-        <ul className="filter-list">
-          {categories.map((category, index) => (
-            <li className="filter-item" key={index}>
-              <button
-                className={selectedCategory === category.toLowerCase() ? 'active' : ''}
-                data-filter-btn
-                onClick={() => handleFilterClick(category)}
-              >
-                {category}
-              </button>
-            </li>
-          ))}
-        </ul>
-
-        <div className="filter-select-box">
-          <button
-            className={`filter-select ${isSelectOpen ? 'active' : ''}`}
-            data-select
-            onClick={handleSelectClick}
-          >
-            <div className="select-value" data-selecct-value>
-              {selectedCategory === 'all' ? 'Select category' : selectedCategory}
-            </div>
-
-            <div className="select-icon">
-              <ion-icon name="chevron-down"></ion-icon>
-            </div>
-          </button>
-
-          <ul className="select-list">
+        <section className="projects">
+          <ul className="filter-list">
             {categories.map((category, index) => (
-              <li className="select-item" key={index}>
+              <li className="filter-item" key={index}>
                 <button
-                  data-select-item
-                  onClick={() => handleSelectItemClick(category)}
+                  className={selectedCategory === category.toLowerCase() ? 'active' : ''}
+                  data-filter-btn
+                  onClick={() => handleFilterClick(category)}
                 >
                   {category}
                 </button>
               </li>
             ))}
           </ul>
-        </div>
 
-        <ul className="project-list">
-          {filteredProjects.map((project, index) => (
-            <li
-              className="project-item active"
-              data-filter-item
-              data-category={project.category}
-              key={index}
+          <div className="filter-select-box">
+            <button
+              className={`filter-select ${isSelectOpen ? 'active' : ''}`}
+              data-select
+              onClick={handleSelectClick}
             >
-              <div
-                className="project-link"
-                onClick={() => navigate(`/project/${project.id}`)}
-                style={{ cursor: 'pointer' }}
-              >
-                <figure className="project-img">
-                  <div className="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src={project.image} alt={project.title} loading="lazy" />
-                </figure>
-
-                <h3 className="project-title">{project.title}</h3>
-
-                <p className="project-category">{project.category}</p>
+              <div className="select-value" data-selecct-value>
+                {selectedCategory === 'all' ? 'Select category' : selectedCategory}
               </div>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </article>
+
+              <div className="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+            </button>
+
+            <ul className="select-list">
+              {categories.map((category, index) => (
+                <li className="select-item" key={index}>
+                  <button
+                    data-select-item
+                    onClick={() => handleSelectItemClick(category)}
+                  >
+                    {category}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <ul className="project-list">
+            <AnimatePresence mode="popLayout">
+              {filteredProjects.map((project) => (
+                <motion.li
+                  className="project-item active"
+                  data-filter-item
+                  data-category={project.category}
+                  key={project.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div
+                    className="project-link"
+                    onClick={() => navigate(`/project/${project.id}`)}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    <figure className="project-img">
+                      <div className="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </div>
+
+                      <img src={project.image} alt={project.title} loading="lazy" />
+                    </figure>
+
+                    <h3 className="project-title">{project.title}</h3>
+
+                    <p className="project-category">{project.category}</p>
+                  </div>
+                </motion.li>
+              ))}
+            </AnimatePresence>
+          </ul>
+        </section>
+      </div>
+    </PageTransition>
   );
 }
 

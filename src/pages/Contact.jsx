@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PageTransition from '../components/PageTransition';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -29,7 +30,7 @@ function Contact() {
   };
 
   return (
-    <article className="contact active" data-page="contact">
+    <PageTransition className="contact" id="contact">
       <header>
         <h2 className="h2 article-title">Contact</h2>
       </header>
@@ -94,7 +95,7 @@ function Contact() {
           </button>
         </form>
       </section>
-    </article>
+    </PageTransition>
   );
 }
 

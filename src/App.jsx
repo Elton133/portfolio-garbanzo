@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
@@ -12,6 +13,8 @@ import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import ProjectDetails from './pages/ProjectDetails';
 import { Helmet } from 'react-helmet';
+import CustomCursor from './components/CustomCursor';
+import ParallaxBackground from './components/ParallaxBackground';
 
 function App() {
   const location = useLocation();
@@ -44,6 +47,8 @@ function App() {
 
   return (
     <main>
+      <CustomCursor />
+      <ParallaxBackground />
       <Helmet>
         <title>Elton John Morden — Software Engineer & Cloud Practitioner</title>
         <meta
@@ -75,15 +80,17 @@ function App() {
       <div className="main-content">
         <Navbar activePage={activePage} setActivePage={handlePageChange} />
 
-        <Routes>
-          <Route path="/" element={<About />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/project/:projectId" element={<ProjectDetails />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<About />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/project/:projectId" element={<ProjectDetails />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </AnimatePresence>
       </div>
     </main>
   );
