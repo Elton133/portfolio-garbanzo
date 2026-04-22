@@ -1044,13 +1044,13 @@ main {
 }
 
 .project-item {
-  display: none;
+  display: block;
   break-inside: avoid;
   margin-bottom: 30px;
+  animation: scaleUp 0.25s ease forwards;
 }
 
 .project-item.active {
-  display: block;
   animation: scaleUp 0.25s ease forwards;
 }
 

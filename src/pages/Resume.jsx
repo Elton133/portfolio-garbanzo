@@ -3,7 +3,6 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { motion } from 'framer-motion';
 import PageTransition from '../components/PageTransition';
-import MagneticButton from '../components/MagneticButton';
 
 function Resume() {
   const education = [

@@ -1,7 +1,6 @@
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useGSAP } from '@gsap/react';
-import { motion, AnimatePresence } from 'framer-motion';
 import gsap from 'gsap';
 import PageTransition from '../components/PageTransition';
 import { projects } from '../data/projectsData';
@@ -89,39 +88,32 @@ function Portfolio() {
           </div>
 
           <ul className="project-list">
-            <AnimatePresence mode="popLayout">
-              {filteredProjects.map((project) => (
-                <motion.li
-                  className="project-item active"
-                  data-filter-item
-                  data-category={project.category}
-                  key={project.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.8 }}
-                  transition={{ duration: 0.3 }}
+            {filteredProjects.map((project, index) => (
+              <li
+                className="project-item active"
+                data-filter-item
+                data-category={project.category}
+                key={index}
+              >
+                <div
+                  className="project-link"
+                  onClick={() => navigate(`/project/${project.id}`)}
+                  style={{ cursor: 'pointer' }}
                 >
-                  <div
-                    className="project-link"
-                    onClick={() => navigate(`/project/${project.id}`)}
-                    style={{ cursor: 'pointer' }}
-                  >
-                    <figure className="project-img">
-                      <div className="project-item-icon-box">
-                        <ion-icon name="eye-outline"></ion-icon>
-                      </div>
+                  <figure className="project-img">
+                    <div className="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
 
-                      <img src={project.image} alt={project.title} loading="lazy" />
-                    </figure>
+                    <img src={project.image} alt={project.title} loading="lazy" />
+                  </figure>
 
-                    <h3 className="project-title">{project.title}</h3>
+                  <h3 className="project-title">{project.title}</h3>
 
-                    <p className="project-category">{project.category}</p>
-                  </div>
-                </motion.li>
-              ))}
-            </AnimatePresence>
+                  <p className="project-category">{project.category}</p>
+                </div>
+              </li>
+            ))}
           </ul>
         </section>
       </div>

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import MagneticButton from './MagneticButton';
 
 function Sidebar() {
   const [isActive, setIsActive] = useState(false);
@@ -105,16 +104,14 @@ function Sidebar() {
           </li>
         </ul>
 
-        <MagneticButton style={{ display: 'block', width: '100%' }}>
-          <a
-            href="/assets/resume.pdf"
-            download
-            className="form-btn sidebar-cv-btn"
-          >
-            <ion-icon name="download-outline"></ion-icon>
-            <span>Download my CV</span>
-          </a>
-        </MagneticButton>
+        <a
+          href="/assets/resume.pdf"
+          download
+          className="form-btn sidebar-cv-btn"
+        >
+          <ion-icon name="download-outline"></ion-icon>
+          <span>Download my CV</span>
+        </a>
       </div>
     </aside>
   );
